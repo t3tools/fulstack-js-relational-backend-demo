@@ -1,14 +1,3 @@
-/*  ChangeLog: Part-1
- -------------------------
-  I   - Install express (npm i express --save)
-  II  - Import express in server.js
-  III - Initialize express app
-  IV  - Create Basic Route
-
-  V   - Create 404 Route
-  VI  - Set Port, Run Server
-*/
-
 //(II) Import Express
 const express = require('express')
 
