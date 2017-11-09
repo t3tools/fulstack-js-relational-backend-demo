@@ -1,11 +1,9 @@
 const express = require('express')
 
-// IV-1 - Import indexRouter.js
 const indexRouter = require('./src/routes/indexRouter.js')
 
 const app = express()
 
-// IV-2 - Import indexRouter.js
 app.use('/', indexRouter)
 
 app.use((req, res)=>{

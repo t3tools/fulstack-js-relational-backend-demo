@@ -1,9 +1,9 @@
-ChangeLog: part-2-express-router
+ChangeLog: part-3-express-views
 -------------------------
-I   : Add routes directory in src/
+I   : Install EJS
 
-II  : Add `indexRouter.js` file src/routes/
+II  : Add `views` folder to file `src/`
 
-III : Configure router in `indexRouter.js` + export
+III : Add `home.ejs`, `about.ejs`, `404.ejs` folder to `src/views/`
 
-IV  : Import indexRouter + add to express app in `server.js`
+IV  :
