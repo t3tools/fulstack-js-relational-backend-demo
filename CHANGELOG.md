@@ -7,6 +7,7 @@ II  : Import express in `server.js`
 III : Initialize express app in `server.js`
 
 IV  : Create Basic Route in `server.js`
+  -(IV-1) send markup back in res
 
 V   : Create 404 Route in `server.js`
 
