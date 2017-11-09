@@ -9,10 +9,8 @@ app.use('/', (req, res)=>{
   res.send('<h1>DEV JOBS</h1>')
 })
 
-//(4) Set Port
+//(4) Set Port, Run Server
 const PORT = process.env.PORT || 3000
-
-//(5) Run server
 app.listen(PORT, ()=>{
   console.log(`APP LISTENING ON ${PORT}`)
 })
