@@ -1,18 +1,26 @@
-//(1) Import Express
+/*
+Part-2 Changelog
+  I - Add routes directory in src/
+  II - Add indexRouter.js file
+  III - Configure router + export
+  IV - Import indexRouter + add to express app
+*/
+
 const express = require('express')
 
-//(2) Initialize express app
+// IV-1 - Import indexRouter.js
+const indexRouter = require('./src/routes/indexRouter.js')
+
 const app = express()
 
-//(3) Create Basic Route
-app.use('/', (req, res)=>{
-  res.send('<h1>DEV JOBS</h1>')
+// IV-2 - Import indexRouter.js
+app.use('/', indexRouter)
+
+app.use((req, res)=>{
+  res.send('<h1>DevJobs - No Match Route</h1>')
 })
 
-//(4) Set Port
 const PORT = process.env.PORT || 3000
-
-//(5) Run server
 app.listen(PORT, ()=>{
   console.log(`APP LISTENING ON ${PORT}`)
 })
