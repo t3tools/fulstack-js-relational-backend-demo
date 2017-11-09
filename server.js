@@ -1,19 +1,32 @@
-/*
-  ChangeLog
+/*  ChangeLog: Part-1
+ -------------------------
+  I   - Install express (npm i express --save)
+  II  - Import express in server.js
+  III - Initialize express app
+  IV  - Create Basic Route
+
+  V   - Create 404 Route
+  VI  - Set Port, Run Server
 */
 
-//(1) Import Express
+//(II) Import Express
 const express = require('express')
 
-//(2) Initialize express app
+//(III) Initialize express app
 const app = express()
 
-//(3) Create Basic Route
+//(IV) Create Basic Route
 app.use('/', (req, res)=>{
-  res.send('<h1>DEV JOBS</h1>')
+  //(IV-1)  req/res is how we handle requests and responses
+  res.send('<h1>DEV JOBS - Home Page</h1>')
 })
 
-//(4) Set Port, Run Server
+//(V) Create 404 Route
+app.use((req, res)=>{
+  res.send('<h1>DEV JOBS - 404 Route</h1>')
+})
+
+//(VI) Set Port, Run Server
 const PORT = process.env.PORT || 3000
 app.listen(PORT, ()=>{
   console.log(`APP LISTENING ON ${PORT}`)
