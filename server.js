@@ -1,10 +1,3 @@
-/*
-Part-2 Changelog
-  I - Add routes directory in src/
-  II - Add indexRouter.js file
-  III - Configure router + export
-  IV - Import indexRouter + add to express app
-*/
 
 const express = require('express')
 
