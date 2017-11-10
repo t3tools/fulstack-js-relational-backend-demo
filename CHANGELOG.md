@@ -1,6 +1,6 @@
 ChangeLog: part-2-express-router
 -------------------------
-I   : Add routes directory in src/
+I   : Add `routes/` directory in src/
 
 II  : Add `pageRouter.js` and `jobsRouter.js` file src/routes/
 
@@ -11,3 +11,8 @@ IV  : Configure router in `jobsRouter.js` + export
 V:  Import pageRouter + add to express app in `server.js` as `/` route namespace
 
 VI:  Import jobsRouter + add to express app in `server.js` as `/jobs` route namespace
+
+'/'
+'/about'
+'/jobs'
+'/jobs/new/'

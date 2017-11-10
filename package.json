@@ -12,7 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "4.16.2",
+    "express": "^4.16.2",
     "npm-run-all": "4.1.2"
   },
   "devDependencies": {
