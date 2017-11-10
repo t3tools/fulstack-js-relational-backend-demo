@@ -1,15 +1,18 @@
 const express = require('express')
 
-// (IV-1) - Import indexRouter.js
-const indexRouter = require('./src/routes/indexRouter.js')
+// (IV-1) - Import pageRouter.js
+const pageRouter = require('./src/routes/pageRouter.js')
+const jobsRouter = require('./src/routes/jobsRouter.js')
 
 const app = express()
 
-// (IV-2) - Import indexRouter.js
-app.use('/', indexRouter)
+// (IV-2) - Import pageRouter.js
+app.use('/', pageRouter)
+app.use('/jobs', jobsRouter)
+
 
 app.use((req, res)=>{
-  res.send('<h1>DevJobs - No Match Route</h1>')
+  res.send('<h1>Page Not Found Route</h1>')
 })
 
 const PORT = process.env.PORT || 3000
