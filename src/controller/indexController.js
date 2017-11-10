@@ -2,7 +2,7 @@
 
 function renderHome (req, res){
   //(V)
-  res.render('home.ejs',)
+  res.render('home.ejs')
 }
 
 function renderAbout (req, res){
