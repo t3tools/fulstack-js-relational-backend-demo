@@ -10,11 +10,6 @@ app.use('/', (req, res)=>{
   res.send('<h1>DEV JOBS - Home Page</h1>')
 })
 
-//(V) Create 404 Route
-app.use((req, res)=>{
-  res.send('<h1>DEV JOBS - 404 Route</h1>')
-})
-
 //(VI) Set Port, Run Server
 const PORT = process.env.PORT || 3000
 app.listen(PORT, ()=>{
