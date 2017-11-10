@@ -1,9 +1,9 @@
 const Router = require('express').Router;
-const { showManyJobs } = require('../controller/jobsController.js')
+const { jobsIndex } = require('../controller/jobsController.js')
 
 const jobsRouter = Router()
 
 jobsRouter
-  .get('/', showManyJobs )
+  .get('/', jobsIndex )
 
 module.exports = jobsRouter

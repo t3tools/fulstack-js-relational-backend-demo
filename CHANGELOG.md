@@ -8,16 +8,17 @@ III.   : Create `dbConnect.js` in `src/db/`.
 
 IV   : Install knex and mysql packages as project dependencies
 
-V.    : Create `knexfile.js` config file at project root
+V.    : Create `knexfile.js` config file at project root. Should include -- db connection information, seeds directory destination, migration dirctory destination
 
 VI.    : Create knex migration to create schema for a *jobs* table
 
 VII.   : Create knex seeds to provide seed the jobs table with actual data.
 
-VIII  :  Create `db.js` file -- imports knex, exports function that accepts config
+VIII  :  Create `dbConnect.js` file -- imports knex, exports function that accepts configuration
 
-IX  :   Create `db.js` file -- imports knex, exports function that accepts config
+IX  :   Import `dbConnect` function and `knexfile.js` object as dbConfig in `server.js` -- execute dbConnect and pass it the config object
 
+X : 
 
 
 

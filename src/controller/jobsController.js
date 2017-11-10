@@ -1,9 +1,9 @@
-function showManyJobs (req, res){
+function jobsIndex (req, res){
   const db = req.app.getVar('db')
   db.select()
     .table('job')
     .then((data)=>{
-      res.render('jobs.ejs',{
+      res.render('jobs-index.ejs',{
         jobsList: data
       })
     })
@@ -20,7 +20,5 @@ function deleteJob (req, res){
 
 
 module.exports = {
-  showManyJobs,
-  createJob,
-  deleteJob
+  jobsIndex
 }

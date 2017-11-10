@@ -1,7 +1,7 @@
 const express = require('express')
 const ejs = require('ejs')
 
-const indexRouter = require('./src/routes/indexRouter.js')
+const homeRouter = require('./src/routes/homeRouter.js')
 const jobsRouter = require('./src/routes/jobsRouter.js')
 
 const connectToDb = require('./src/database/dbConnect.js')
@@ -23,11 +23,9 @@ app.set('views', './src/views');
 // Configure Static directory of static files (.js, .css)
 app.use( express.static(`${__dirname}/dist`))
 
-
 // Configure Router
-app.use('/', indexRouter)
+app.use('/', homeRouter)
 app.use('/jobs', jobsRouter)
-
 
 
 app.use((req, res)=>{

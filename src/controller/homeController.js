@@ -1,14 +1,14 @@
 
-function showHome (req, res){
+function renderHome (req, res){
   res.render('home.ejs')
 }
 
-function showAbout (req, res){
+function renderAbout (req, res){
   res.render('about.ejs', {info: 'We like to code here'})
 }
 
 
 module.exports = {
-  showHome,
-  showAbout
+  renderHome,
+  renderAbout
 }
