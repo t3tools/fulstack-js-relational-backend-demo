@@ -1,21 +1,9 @@
-ChangeLog: part-3-express-views
+ChangeLog: part-4-mvc-controller
 -------------------------
-I    : Install EJS
+I    : Create a 'controller' directory in `src/`
 
-II   : Add `views` folder to file `src/`
+II   : Create a file called `indexController.js` in `src/controller/`
 
-III  : Add `home.ejs`, `about.ejs`, `404.ejs` files to `src/views/`
+III  : Move the anonymous functions from `indexRouter.js` to named functions in `indexController.js`  -- `renderHome`, `renderAbout`
 
-IV   : In `server.js`, import + configure ejs view engine for express.
-  - (IV-1) :  
-  - (IV-2) :
-
-V    : Configure router with `res.render(...)` for */* and */about*  and 404 routes.
-  - (V-1) : Pass to a view
-
-VI   : In `dist/` create `css/`, `js/`.
-
-
-VII  : In `dist/css/`, create `styles.css` and in `dist/js/` `bundle.js`
-
-VIII :  Configure `express.static` serving static files from dist
+IV   : Import `renderHome` and `renderAbout` from `indexController` in indexRouter

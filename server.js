@@ -18,7 +18,6 @@ app.use( express.static(`${__dirname}/dist`))
 app.use('/', indexRouter)
 
 app.use((req, res)=>{
-  // (V)
   res.render('404')
 })
 
