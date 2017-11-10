@@ -8,11 +8,8 @@ III : Configure router in `pageRouter.js` + export
 
 IV  : Configure router in `jobsRouter.js` + export
 
-V:  Import pageRouter + add to express app in `server.js` as `/` route namespace
+V   :  Import pageRouter + add to express app in `server.js` as `/` route namespace
 
-VI:  Import jobsRouter + add to express app in `server.js` as `/jobs` route namespace
+VI   :  Import jobsRouter + add to express app in `server.js` as `/jobs` route namespace
 
-'/'
-'/about'
-'/jobs'
-'/jobs/new/'
+VII  :  Create the 404 route (No Route Found) AFTER the pageRouter and jobsRouter
