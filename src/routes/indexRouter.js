@@ -1,12 +1,13 @@
 const Router = require('express').Router;
-const { renderHome, renderAbout } = require('../controller/indexController.js')
+const { showHome, showAbout} = require('../controller/indexController.js')
 
 const indexRouter = Router()
 
 indexRouter
-  .get('/', renderHome)
+  .get('/', showHome)
 
 indexRouter
-  .get('/about', renderAbout)
+  .get('/about', showAbout)
+
 
 module.exports = indexRouter
