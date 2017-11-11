@@ -1,14 +1,19 @@
 const express = require('express')
+const fs = require('fs')
 
-// (IV-1) - Import pageRouter.js
+// Import views
+const homePageHTML = fs.readFileSync(`${__dirname}/src/views/index.html`, 'utf-8')
+
+// Import pageRouter.js
 const pageRouter = require('./src/routes/pageRouter.js')
-const jobsRouter = require('./src/routes/jobsRouter.js')
+const apiRouter = require('./src/routes/apiRouter.js')
 
 const app = express()
 
+app.use(express.static(`${__dirname}/public`))
 // (IV-2) - Import pageRouter.js
 app.use('/', pageRouter)
-app.use('/jobs', jobsRouter)
+app.use('/api', apiRouter)
 
 // (VII) Create 404-route (if the other routes don't match)
 app.use((req, res)=>{
