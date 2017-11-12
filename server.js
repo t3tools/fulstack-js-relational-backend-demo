@@ -8,14 +8,11 @@ const connectToDb = require('./src/database/dbConnect.js')
 const dbConfigObj = require('./knexfile')
 
 const app = express()
-app.getVar = app.get
 
 // DB Connection
 const appDb = connectToDb(dbConfigObj.development)
-app.set('db', appDb)
-
+app.locals.db = appDb
 // Configure Router
-app.use('/', homeRouter)
 app.use('/api', apiRouter)
 
 

@@ -7,9 +7,8 @@ function jobsIndex (req, res){
   db.select()
     .table('job')
     .then((data)=>{
-      res.render('jobs-index.ejs',{
-        jobsList: data
-      })
+      console.log('hi')
+      res.json(data)
     })
 }
 
