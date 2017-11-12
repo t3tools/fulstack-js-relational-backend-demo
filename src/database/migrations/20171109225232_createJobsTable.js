@@ -8,7 +8,7 @@ exports.up = function(knex, Promise) {
 
       //Fields
       jobsTable.string('title')
-      jobsTable.string('description')
+      jobsTable.table('description')
       jobsTable.string('location')
       jobsTable.integer('salary')
       jobsTable.boolean('fullTime')
@@ -18,5 +18,5 @@ exports.up = function(knex, Promise) {
 };
 
 exports.down = function(knex, Promise) {
-  return knex.dropTableIfExists('job')
+  return knex.schema.dropTableIfExists('job')
 };

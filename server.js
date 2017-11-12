@@ -1,22 +1,23 @@
 const express = require('express')
 const ejs = require('ejs')
 
-// Import view engine
+//Import ORM
+const { Model } = require('objection')
 
-
-// Import pageRouter.js
 const pageRouter = require('./src/routes/pageRouter.js')
 const apiRouter = require('./src/routes/apiRouter.js')
-const pageRouter = require('./src/routes/pageRouter.js')
+
 
 const connectToDb = require('./src/database/dbConnect.js')
 const dbConfigObj = require('./knexfile')
 
 const app = express()
 
-// DB Connection
+
 const appDb = connectToDb(dbConfigObj.development)
-// Make db globlly accessible
+Model.knex(appDb)
+
+
 app.locals.db = appDb
 
 
@@ -34,7 +35,6 @@ app.use((req, res)=>{
   res.render('404.ejs')
 })
 
-//Configure port const PORT = 3000
 app.listen(3000, ()=>{
   console.log(`APP LISTENING ON ${3000}`)
 })
