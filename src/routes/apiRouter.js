@@ -1,3 +1,7 @@
+const Router = require('express').Router;
+
+const apiRouter = Router()
+
 function jobsIndex (req, res){
   const db = req.app.getVar('db')
   db.select()
@@ -9,16 +13,8 @@ function jobsIndex (req, res){
     })
 }
 
-function createJob (req, res){
-  const db = req.app.getVar('db')
-}
-
-function deleteJob (req, res){
-  const db = req.app.getVar('db')
-
-}
+apiRouter
+  .get('/jobs', jobsIndex )
 
 
-module.exports = {
-  jobsIndex
-}
+module.exports = apiRouter

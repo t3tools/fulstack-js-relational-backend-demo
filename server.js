@@ -14,18 +14,9 @@ app.getVar = app.get
 const appDb = connectToDb(dbConfigObj.development)
 app.set('db', appDb)
 
-
-// Configure Views
-app.engine('ejs', ejs.renderFile)
-app.set('view engine', 'ejs');
-app.set('views', './src/views');
-
-// Configure Static directory of static files (.js, .css)
-app.use( express.static(`${__dirname}/dist`))
-
 // Configure Router
 app.use('/', homeRouter)
-app.use('/jobs', jobsRouter)
+app.use('/api', apiRouter)
 
 
 app.use((req, res)=>{
