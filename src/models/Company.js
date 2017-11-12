@@ -16,7 +16,7 @@ class Company extends Model {
         modelClass: Job,
         join: {
           from: 'company.id',
-          to: 'ob.companyId'
+          to: 'job.companyId'
         }
 
       }
