@@ -3,7 +3,7 @@ const Router = require('express').Router;
 const apiRouter = Router()
 
 function jobsIndex (req, res){
-  const db = req.app.getVar('db')
+  const db = req.app.locals.db
   db.select()
     .table('job')
     .then((data)=>{
