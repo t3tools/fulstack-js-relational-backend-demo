@@ -1,17 +1,10 @@
-ChangeLog: part-2-express-router
+ChangeLog: part-3-express-views
 -------------------------
-I   : Add `routes/` directory in src/
+I   : Install ejs
 
-II  : Add `pageRouter.js` and `api.js`
+II  : Set view engine
 
-III : Configure router in `pageRouter.js` to serve files from views + export
-
-IV  : Configure router in `api.js` to serve json + export
-
-V   :  Import pageRouter + add to express app in `server.js` as `/` route namespace
-
-VI   :  Import apiRouter + add to express app in `server.js` as `/api` route namespace
-
-VII  :  Create the 404 route (No Route Found) AFTER the pageRouter and jobsRouter
-
-VIII : Setup express static to serve static css, js + images.
+III : res.render(...) for 3 routes
+- /
+- /about
+- /* (no match)

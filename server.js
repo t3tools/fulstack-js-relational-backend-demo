@@ -1,8 +1,8 @@
 const express = require('express')
-const fs = require('fs')
+const ejs = require('ejs')
 
-// Import views
-const homePageHTML = fs.readFileSync(`${__dirname}/src/views/index.html`, 'utf-8')
+// Import view engine
+
 
 // Import pageRouter.js
 const pageRouter = require('./src/routes/pageRouter.js')
@@ -10,14 +10,19 @@ const apiRouter = require('./src/routes/apiRouter.js')
 
 const app = express()
 
+app.engine('ejs', ejs.renderFile)
+app.set('view engine', 'ejs');
+app.set('views', `${__dirname}/src/views`);
+
 app.use(express.static(`${__dirname}/public`))
+
 // (IV-2) - Import pageRouter.js
 app.use('/', pageRouter)
 app.use('/api', apiRouter)
 
 // (VII) Create 404-route (if the other routes don't match)
 app.use((req, res)=>{
-  res.send('<h1>Page Not Found Route</h1>')
+  res.render('404.ejs')
 })
 
 const PORT = process.env.PORT || 3000
