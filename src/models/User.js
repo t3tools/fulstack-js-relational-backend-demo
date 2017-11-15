@@ -1,26 +1,18 @@
-const { Model } = require('objection');
-const PasswordUser = require('objection-password')();
-  
-class User extends Model {
+const Password = require('objection-password')();
+const Model = require('objection').Model;
+
+
+class User extends Password(Model) {
+
   static get tableName (){
     return 'user'
   }
 
-  // static get relationMappings(){
-  //   // const Company = require('./Company.js')
-  //
-  //   return {
-  //   //   companies: {
-  //   //     relation: Model.HasOne,
-  //   //     modelClass: Company,
-  //   //     join: {
-  //   //       from: 'user.id',
-  //   //       to: 'company.userId'
-  //   //     }
-  //   //
-  //   //   }
-  //   // }
-  // }
+  static get relationMappings(){
+
+    return {
+    }
+  }
 }
 
 

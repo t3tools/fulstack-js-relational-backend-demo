@@ -20,8 +20,27 @@ function companiesIndex (req, res){
     })
 }
 
+function usersIndex (req, res){
+  const db = req.app.locals.db
+  db.select()
+    .returning(['email','id'])
+    .table('user')
+    .then((data)=>{
+        const dataNoPass = data.map((u)=>{
+          delete u.password
+        })
+        return dataNoPass
+    })
+    .then((dNoPass)=>{
+      res.json(dNoPass)
+    })
+}
+
+
+
 apiRouter
   .get('/jobs', jobsIndex )
   .get('/companies', companiesIndex)
+  .get('/users', usersIndex)
 
 module.exports = apiRouter

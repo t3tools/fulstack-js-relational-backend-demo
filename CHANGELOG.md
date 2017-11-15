@@ -1,8 +1,25 @@
-ChangeLog: part-5-models-access
+ChangeLog: part-7-authentication
 -------------------------
-I.    : Install body-parser
+I.    : Install `objection-password`
 
-II.   : Import body-parser in `server.js` and use as middleware.
+II.   : Create  `2017******createUsersTable.js` Migration --`src/database/migrations` w/ email and password fields
 
-  - urlencoded: false
-  - bodyParser.json()
+III.   : In `src/models/user.js` Configure `User` model and configure with object-password
+
+IV     : Import `User` model + seed database in  `src/database/seeds/03-users.js`
+
+  + note: you will need to map over the rows and return an array of objection queryBuilder promises into `Promise.all(...)`
+
+```js
+const User = require('../../models/User.js')
+const { Model } = require('objection')
+
+...
+
+Model.knex(knex)
+return knex('user').del()
+  .then(function () {
+    // Inserts seed entries
+    return Promise.all(userDataRows.map( u => User.query().insert(u) ))
+  })
+```

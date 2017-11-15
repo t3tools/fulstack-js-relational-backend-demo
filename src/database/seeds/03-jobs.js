@@ -5,7 +5,7 @@ const dataRows = [
     location: 'Ciudad de Mexico',
     salary: 27000,
     fullTime: true,
-    companyId: Math.floor(Math.random()*3)+1
+    companyId: Math.floor(Math.random()*4)+1
   },
   {
     title: 'UX Architect',
@@ -13,7 +13,7 @@ const dataRows = [
     location: 'Monterrey',
     salary: 35000,
     fullTime: true,
-    companyId: Math.floor(Math.random()*3)+1
+    companyId: Math.floor(Math.random()*4)+1
   },
   {
     title: 'Junior Front End Engineer',
@@ -21,7 +21,7 @@ const dataRows = [
     location: 'Monterrey',
     salary: 9000,
     fullTime: false,
-    companyId: Math.floor(Math.random()*3)+1
+    companyId: Math.floor(Math.random()*4)+1
   },
   {
     title: 'Mid-Level Front End Engineer',
@@ -29,7 +29,7 @@ const dataRows = [
     location: 'Ciudad de Mexico',
     salary: 23000,
     fullTime: true,
-    companyId: Math.floor(Math.random()*3)+1
+    companyId: Math.floor(Math.random()*4)+1
   },
   {
     title: 'Mid-Level Java Engineer',
@@ -37,7 +37,7 @@ const dataRows = [
     location: 'Ciudad de Mexico',
     salary: 28000,
     fullTime: true,
-    companyId: Math.floor(Math.random()*3)+1
+    companyId: Math.floor(Math.random()*4)+1
   },
   {
     title: 'Database Admin - Mongoose',
@@ -45,7 +45,7 @@ const dataRows = [
     location: 'Ciudad de Mexico',
     salary: 24000,
     fullTime: true,
-    companyId: Math.floor(Math.random()*3)+1
+    companyId: Math.floor(Math.random()*4)+1
   },
   {
     title: 'IOS Developer - Senior',
@@ -53,7 +53,7 @@ const dataRows = [
     location: 'Ciudad de Mexico',
     salary: 43000,
     fullTime: true,
-    companyId: Math.floor(Math.random()*3)+1
+    companyId: Math.floor(Math.random()*4)+1
   },
   {
     title: 'Scala Developer : Mid Level',
@@ -61,7 +61,7 @@ const dataRows = [
     location: 'Guadalajara',
     salary: 23000,
     fullTime: true,
-    companyId: Math.floor(Math.random()*3)+1
+    companyId: Math.floor(Math.random()*4)+1
   },
   {
     title: 'Wordpress Developer',
@@ -69,7 +69,7 @@ const dataRows = [
     location: 'Guadalajara',
     salary: 16000,
     fullTime: false,
-    companyId: Math.floor(Math.random()*3)+1
+    companyId: Math.floor(Math.random()*4)+1
   },
   {
     title: 'Senior Applications Architect',
@@ -77,7 +77,7 @@ const dataRows = [
     location: 'Monterrey',
     salary: 56000,
     fullTime: true,
-    companyId: Math.floor(Math.random()*3)+1
+    companyId: Math.floor(Math.random()*4)+1
   },
   {
     title: 'Senior Applications Architect',
@@ -85,7 +85,7 @@ const dataRows = [
     location: 'Monterrey',
     salary: 56000,
     fullTime: true,
-    companyId: Math.floor(Math.random()*3)+1
+    companyId: Math.floor(Math.random()*4)+1
   },
   {
     title: 'Python Developer',
@@ -93,7 +93,7 @@ const dataRows = [
     location: 'Ciudad de Mexico',
     salary: 36000,
     fullTime: true,
-    companyId: Math.floor(Math.random()*3)+1
+    companyId: Math.floor(Math.random()*4)+1
   },
   {
     title: 'Magento Developer',
@@ -101,7 +101,7 @@ const dataRows = [
     location: 'Monterrey',
     salary: 25000,
     fullTime: false,
-    companyId: Math.floor(Math.random()*3)+1
+    companyId: Math.floor(Math.random()*4)+1
   },
   {
     title: 'Magento Developer',
@@ -109,7 +109,7 @@ const dataRows = [
     location: 'Monterrey',
     salary: 25000,
     fullTime: false,
-    companyId: Math.floor(Math.random()*3)+1
+    companyId: Math.floor(Math.random()*4)+1
   }
 ]
 
