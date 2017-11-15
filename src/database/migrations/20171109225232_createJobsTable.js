@@ -2,18 +2,18 @@
 exports.up = function(knex, Promise) {
   return knex
     .schema
-    .createTable('job', (jobsTable)=>{
+    .createTable('job', (jobTable)=>{
       //primary key
-      jobsTable.increments()
+      jobTable.increments()
 
       //Fields
-      jobsTable.string('title')
-      jobsTable.table('description')
-      jobsTable.string('location')
-      jobsTable.integer('salary')
-      jobsTable.boolean('fullTime')
+      jobTable.string('title')
+      jobTable.text('description')
+      jobTable.string('location')
+      jobTable.integer('salary')
+      jobTable.boolean('fullTime')
 
-      return jobsTable
+      return jobTable
     })
 };
 

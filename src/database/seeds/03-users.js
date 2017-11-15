@@ -1,15 +1,17 @@
-import User from '../../models/User.js'
+const User = require('../../models/User.js')
 
 let dataRows=[
-  {email: 'usertest', password: 'wordpass'},
-  {email: 'hello', password: 'password'}
+  {email: 'usertest@mail.com', password: 'wordpass'},
+  {email: 'hello@mail.com', password: 'password'},
+  {email: 'travo@mail.com', password: 'wowow'}
 ]
 
 exports.seed = function(knex, Promise) {
   // Deletes ALL existing entries
-  return knex('table_name').del()
+  return knex('user').del()
     .then(function () {
+      console.log(User  )
       // Inserts seed entries
-      return User.insert(dataRows);
+      return User.query().insert(dataRows);
     });
 };

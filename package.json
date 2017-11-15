@@ -7,11 +7,13 @@
     "dev": "npm-run-all dev:server",
     "dev:server": "NODE_ENV=development nodemon server.js server.js --watch src --watch server.js",
     "start": "node server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "reseed": "knex migrate:rollback && knex migrate:latest && knex seed:run"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^1.0.3",
     "body-parser": "^1.18.2",
     "ejs": "^2.5.7",
     "express": "4.16.2",

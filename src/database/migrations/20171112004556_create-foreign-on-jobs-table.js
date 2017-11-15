@@ -14,8 +14,7 @@ exports.up = function(knex, Promise) {
 exports.down = function(knex, Promise) {
   return knex.schema.table('job', function (jobTable) {
     jobTable.dropForeign('companyId')
-    jobTable.dropColumn('companyId');
-
+    jobTable.dropColumn('companyId'); 
     return jobTable
 
   })
