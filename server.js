@@ -6,6 +6,7 @@ const { Model } = require('objection')
 
 const pageRouter = require('./src/routes/pageRouter.js')
 const apiRouter = require('./src/routes/apiRouter.js')
+const authRouter = require('./src/routes/authRouter.js')
 
 
 const connectToDb = require('./src/database/dbConnect.js')
@@ -27,9 +28,10 @@ app.use(bodyParser.json())
 
 app.use(express.static(`${__dirname}/public`))
 
-app.use('/', pageRouter)
-app.use('/api', apiRouter)
 
+app.use('/api', apiRouter)
+app.use('/auth', authRouter)
+app.use('/', pageRouter)
 
 app.use((req, res)=>{
   res.render('404.ejs')
