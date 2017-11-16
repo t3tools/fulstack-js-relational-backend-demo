@@ -19,15 +19,15 @@ class Company extends Model {
           from: 'company.id',
           to: 'job.companyId'
         }
+      },
+      user: {
+        relation: Model.BelongsToOneRelation,
+        modelClass: User,
+        join: {
+          from: 'company.userId',
+          to: 'user.id'
+        }
       }
-      // user: {
-      //   relation: Model.BelongsToOneRelation,
-      //   modelClass: User,
-      //   join: {
-      //     from: 'company.userId',
-      //     to: 'user.id'
-      //   }
-      // }
     }
   }
 }

@@ -38,7 +38,7 @@ function jobsDelete (req, res){
 
 function companiesIndex (req, res){
   Company.query()
-    .eager('jobs')
+    .eager('[jobs, user]')
     .then((data)=>{
       console.log(data)
       return res.json(data)

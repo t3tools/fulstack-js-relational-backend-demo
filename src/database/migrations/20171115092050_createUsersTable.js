@@ -1,15 +1,15 @@
 
 exports.up = function(knex, Promise) {
   return knex.schema
-  .createTable('user', (jobTable)=>{
+  .createTable('user', (userTable)=>{
     //primary key
-    jobTable.increments()
+    userTable.increments()
 
     //Fields
-    jobTable.string('email').notNullable()
-    jobTable.string('password').notNullable()
+    userTable.string('email').notNullable()
+    userTable.string('password').notNullable()
 
-    return jobTable
+    return userTable
   })
 };
 
