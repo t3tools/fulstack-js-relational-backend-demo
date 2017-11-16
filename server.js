@@ -37,7 +37,7 @@ app.use(bodyParser.json())
 //configure sessions w/ passport
 app.use(cookieParser())
 app.use(cookieSession({
-  name: 'session',
+  name: 'cookiemonster',
 	secret: 'superdupersupersecret',
 	httpOnly: true,
 	signed: false
