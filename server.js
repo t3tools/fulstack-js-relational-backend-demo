@@ -16,6 +16,9 @@ const passport = require('passport')
 const session = require('express-session')
 const cookieParser = require('cookie-parser')
 
+const registerLocalStrategy = require('./src/middleware/passport-local--registerLocalStrategy.js')
+const { configDeserializeUser, configSerializeUser } = require('./src/helpers/passport-local--sessionActions.js')
+
 const app = express()
 
 const appDb = connectToDb(dbConfigObj.development)
@@ -39,9 +42,12 @@ app.use(session({
 	saveUninitialized: true
 }))
 
+
 app.use(passport.initialize())
 app.use(passport.session())
-configurePassport
+passport.use(registerLocalStrategy())
+passport.serializeUser(configSerializeUser())
+passport.deserializeUser(configDeserializeUser())
 
 app.use(express.static(`${__dirname}/public`))
 

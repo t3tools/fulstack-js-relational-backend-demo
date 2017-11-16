@@ -10,4 +10,4 @@ IV     : Import `User` model in `src/database/seeds/03-users.js` to seed user ta
 
   + note: you will need to map over the rows and return an array of objection queryBuilder promises into `Promise.all(...)`
 
-V      : 
+V      :

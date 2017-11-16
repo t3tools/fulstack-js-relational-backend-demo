@@ -2,10 +2,10 @@ const User = require('../models/User.js')
 const handleDbError = require('../helpers/handleDbError.js')
 
 module.exports = async function saveNewUser(req, res, next){
-  if(res.locals.user) return next()
 
   try {
-    if(res.locals.userAlreadyExists) return next()
+
+    if(res.locals.user) return next()
 
     const newUser = await User
       .query()

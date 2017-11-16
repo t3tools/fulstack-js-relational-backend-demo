@@ -1,28 +1,32 @@
+const passport = require('passport')
+
 let Router = require('express').Router;
 let User = require('../models/User.js')
-let getUserByEmail = require('../middleware/auth-getUserByEmail.js')
-let verifyPassword = require('../middleware/auth-verifyPassword.js')
-let saveNewUser = require('../middleware/auth-saveNewUser.js')
-
-let {handleLoginRes, handleRegisterRes} = require('../controllers/authController.js')
+let getUserByEmail = require('../middleware/auth--getUserByEmail.js')
+let saveNewUser = require('../middleware/auth--saveNewUser.js')
+let {
+  handleRegisterRes,
+  handleCurrentAuthRes,
+  handleLogoutRes
+} = require('../controllers/authController.js')
 
 // let {registerUser, getCurrentUser, logoutUser, authenticateUser } = require('../controllers/authController.js')(User)
 const authRouter = Router()
 
 authRouter
   .post('/login',
-    getUserByEmail,
-    verifyPassword, //Terminate Session, Start Sesssion
-    handleLoginRes
+    passport.authenticate('local'),
+
   )
   .post('/register',
     getUserByEmail,
     saveNewUser,
     handleRegisterRes
   )
-  // .post('/register', registerUser)
-  // .get('/current', getCurrentUser)
-  // .get('/logout', endSession, logoutUser)
+  .get('/current', (req, res)=>{
+    res.json(req.user || {})
+  })
+  .get('/logout', )
 
 
 module.exports = authRouter

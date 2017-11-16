@@ -1,23 +1,9 @@
 const User = require('../models/User.js')
 
-exports.handleLoginRes = function(req, res){
-  const user = res.locals.user
-
-  if (!res.locals.userAlreadyExists) {
-    return res.status(403).json('403: user email does not exists')
-  }
-
-  if (!res.locals.validPassword) {
-    return res.status(403).send('403: invalid user password')
-  }
-
-  delete user.password
-  return res.status(200).json(user)
-}
-
 exports.handleRegisterRes = function(req, res){
   const newUser = res.locals.newUser
   const previousUser = res.locals.user
+
   if(previousUser) {
     return res.status(403).json('User email alteady exists')
   }
@@ -28,4 +14,21 @@ exports.handleRegisterRes = function(req, res){
 
   delete newUser.password
   return res.status(200).json(newUser)
+}
+
+exports.handleLoginRes = (req, res)=>{
+  console.log(req.user)
+  res.json(req.user)
+}
+
+exports.handleCurrentAuthRes = (req, res)=>{
+    const user = req.user
+    req.logout()
+    res.status(200).json({loggedOut: true, user})
+}
+
+exports.handleLogoutRes = (req, res)=>{
+    const user = req.user
+    req.logout()
+    res.status(200).json({loggedOut: true, user})
 }

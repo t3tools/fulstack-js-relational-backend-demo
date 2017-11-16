@@ -1,15 +1,22 @@
 const User = require('../models/User.js')
 
 
-exports.serializeUser = function(user, done){
-  done(null, user.id)
-})
+exports.configSerializeUser = function( config={} ) {
+  return function(user, done){
+    console.log('serializing user', user )
+    done(null, user.id)
+  }
+}
 
-exports.deserializeUser = async function(userId, done){
-    const u = await User
+exports.configDeserializeUser = function( config={} ) {
+  return async function(userId, done){
+    console.log('DESERIALIZEING')
+    const usr = await User
       .query()
       .findById(userId)
       .returning('*')
 
-    done(null, u)
-})
+    if(usr) delete usr.password
+    done(null, usr)
+  }
+}

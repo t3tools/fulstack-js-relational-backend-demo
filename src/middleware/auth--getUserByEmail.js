@@ -10,7 +10,7 @@ module.exports = async function getUserByEmail(req, res, next){
       .first()
       .where({ email: reqBody.email })
       .returning('*')
-
+    
     res.locals.user = user
     next()
 

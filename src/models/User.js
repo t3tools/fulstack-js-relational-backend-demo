@@ -35,7 +35,7 @@ function _validateInput(modelInstance){
     });
   }
 
-
+  return modelInstance
 }
 
 
@@ -45,13 +45,20 @@ class User extends Password(objection.Model) {
     return 'user'
   }
 
-  $beforeInsert() {
-    _validateInput(this)
+  $validate(instance){
+    _validateInput(instance)
+    return instance
   }
-
-  $beforeUpdate() {
-    _validateInput(this)
-  }
+  //
+  // $beforeInsert(context) {
+  //   _validateInput(this)
+  //   return context
+  // }
+  //
+  // $beforeUpdate(context) {
+  //   _validateInput(this)
+  //   return context
+  // }
 
   static get relationMappings(){
     return {
