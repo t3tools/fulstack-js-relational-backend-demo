@@ -12,6 +12,10 @@ const authRouter = require('./src/routes/authRouter.js')
 const connectToDb = require('./src/database/dbConnect.js')
 const dbConfigObj = require('./knexfile')
 
+const passport = require('passport')
+const session = require('express-session')
+const cookieParser = require('cookie-parser')
+
 const app = express()
 
 const appDb = connectToDb(dbConfigObj.development)
@@ -25,6 +29,19 @@ app.set('views', `${__dirname}/src/views`);
 
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
+
+
+//configure sessions w/ passport
+app.use(cookieParser())
+app.use(session({
+	secret: 'superdupersupersecrti',
+	resave: true,
+	saveUninitialized: true
+}))
+
+app.use(passport.initialize())
+app.use(passport.session())
+configurePassport
 
 app.use(express.static(`${__dirname}/public`))
 
