@@ -7,7 +7,8 @@ let saveNewUser = require('../middleware/auth--saveNewUser.js')
 let {
   handleRegisterRes,
   handleCurrentAuthRes,
-  handleLogoutRes
+  handleLogoutRes,
+  handleLoginRes
 } = require('../controllers/authController.js')
 
 // let {registerUser, getCurrentUser, logoutUser, authenticateUser } = require('../controllers/authController.js')(User)
@@ -16,7 +17,7 @@ const authRouter = Router()
 authRouter
   .post('/login',
     passport.authenticate('local'),
-
+    handleLoginRes
   )
   .post('/register',
     getUserByEmail,
@@ -26,7 +27,7 @@ authRouter
   .get('/current', (req, res)=>{
     res.json(req.user || {})
   })
-  .get('/logout', )
+  .get('/logout', handleLogoutRes)
 
 
 module.exports = authRouter

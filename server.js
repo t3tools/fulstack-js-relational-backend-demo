@@ -13,7 +13,7 @@ const connectToDb = require('./src/database/dbConnect.js')
 const dbConfigObj = require('./knexfile')
 
 const passport = require('passport')
-const session = require('express-session')
+const cookieSession = require('cookie-session')
 const cookieParser = require('cookie-parser')
 
 const registerLocalStrategy = require('./src/middleware/passport-local--registerLocalStrategy.js')
@@ -36,10 +36,11 @@ app.use(bodyParser.json())
 
 //configure sessions w/ passport
 app.use(cookieParser())
-app.use(session({
-	secret: 'superdupersupersecrti',
-	resave: true,
-	saveUninitialized: true
+app.use(cookieSession({
+  name: 'session',
+	secret: 'superdupersupersecret',
+	httpOnly: true,
+	signed: false
 }))
 
 
